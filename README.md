@@ -9,8 +9,9 @@ A comprehensive vacation management system built with .NET that implements the V
 ![badge-dot-net]
 ![badge-sqlserver]
 ![badge-swagger]
-![badge-docker]
 ![badge-rabbit]
+![badge-docker]
+
 
 ## Authors
 These example projects were created for educational purposes. [Marcelo](https://github.com/Mmarcelinho) is responsible for creating and maintaining these projects.

@@ -1,5 +1,5 @@
 ## Overview
-A backend application following the Vertical Slice Architecture pattern for clean and scalable code.
+A comprehensive vacation management system built with .NET that implements the Vertical Slice Architecture pattern. This system allows organizations to efficiently manage employee vacation requests, approvals, and tracking. The architecture promotes clean code organization, maintainability, and scalability by grouping related functionality into cohesive slices. 
 
 ## Technologies Used
 

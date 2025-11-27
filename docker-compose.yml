@@ -1,4 +1,13 @@
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.3
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.13.3
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.58
+
   vacationsystemdb:
     image: mcr.microsoft.com/mssql/server:2022-latest
 

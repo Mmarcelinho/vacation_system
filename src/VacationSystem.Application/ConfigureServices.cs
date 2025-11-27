@@ -76,7 +76,7 @@ public static class DependencyInjection
     private static void AddRabbitMQ(IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<RabbitMQSettings>(
-    configuration.GetSection("RabbitMQ"));
+        configuration.GetSection("RabbitMQ"));
         services.AddSingleton<IRabbitMQService, RabbitMQService>();
     }
 

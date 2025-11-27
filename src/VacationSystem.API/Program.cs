@@ -1,5 +1,7 @@
+using System.Reflection;
 using Carter;
 using Microsoft.OpenApi.Models;
+using VacationSystem.API.Extensions;
 using VacationSystem.API.Infrastructure;
 using VacationSystem.API.Token;
 using VacationSystem.Application;
@@ -7,6 +9,10 @@ using VacationSystem.Application.Common.Security.Tokens;
 using VacationSystem.Application.Infrastructure.Persistence.Extensions;
 
 const string AUTHENTICATION_TYPE = "Bearer";
+
+var assemblyName = Assembly.GetExecutingAssembly().GetName();
+var appName = assemblyName.Name;
+var appVersion = assemblyName.Version?.ToString();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,7 +64,8 @@ builder.Services
     .AddProblemDetails()
     .AddCarter()
     .AddScoped<ITokenProvider, HttpContextTokenValue>()
-    .AddHttpContextAccessor();
+    .AddHttpContextAccessor()
+    .AddLog(builder.Configuration, appName!, appVersion!);
 
 var app = builder.Build();
 
@@ -75,6 +82,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors();
 app.MapCarter();
 app.UseExceptionHandler(options => { });
+app.UseLog();
 
 await UpdateDatabase();
 
